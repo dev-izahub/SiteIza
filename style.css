@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --grafite: #2e2e2e;
+  --verde-escuro: #14424b;
+  --verde-claro: #34b797;
+  --verde: #2f9364;
+  --amarelo: #edff00;
+  --gold: #ffd700;
+  --off-white: #f4f4f4;
+  --degrade-btn: linear-gradient(var(--verde-claro), var(--verde));
+}
+
+.background-verde {
+  background: var(--grafite);
+}
+
+/* classes reutilizaveis */
+.container {
+  max-width: 1440px;
+  padding: 0 5%;
+  margin: 0 auto;
+}
+
+section,
+footer {
+  padding: 2.7rem 0;
+}
+.btn-gradient {
+  padding: 10px 25px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background-image: var(--degrade-btn);
+}
+
+/*  classes do site */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo a {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffff;
+}
+
+.ul {
+  display: flex;
+  align-items: center;
+}
+.ul li {
+  margin: 0 35px;
+  font-size: 15px;
+}
+.ul li a {
+  color: #ffffff;
+  transition: 0.3s;
+}
+ul li a:hover {
+  color: #edff00;
+}
+
+/* main */
+main .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.main-text {
+  width: 50%;
+  color: #ffffff;
+}
+
+.main-text h1 {
+  font-size: 3.5rem;
+}
+
+.main-text div {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-img {
+  width: 50%;
+}
+
+.main-img img {
+  width: 100%;
+}
+
+/* menu icon */
+.menu-icon {
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+/* resultados */
+.resultados {
+  background-color: #34b797;
+}
+
+.resultados .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resultados .resultados-text {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 50%;
+}
+.resultados .resultados-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.resultados .resultados-numero p {
+  text-align: center;
+  margin: 0 30px;
+  font-size: 20px;
+}
+.resultados .resultados-numero p span {
+  font-size: 30px;
+  font-weight: 600;
+}
+/*  section diferenciais */
+
+.diferenciais .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+.diferenciais .card {
+  width: 30%;
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.diferenciais .card:hover {
+  background-color: #edff00;
+  /* box-shadow: 0px 10px 67px 8px #edff00; */
+}
+.diferenciais .card img {
+  width: 60px;
+}
+
+.diferenciais .card .titulo {
+  margin: 13px 0;
+  font-weight: 600;
+}
+/*  section soluções */
+.solucoes .container {
+  display: flex;
+  align-items: center;
+}
+.solucoes .solucoes-img {
+  width: 50%;
+}
+
+.solucoes .solucoes-img img {
+  width: 100%;
+
+  border-radius: 10px;
+}
+.solucoes .solucoes-text {
+  width: 50%;
+  padding-left: 90px;
+}
+.solucoes .solucoes-text h2 {
+  font-size: 2.5rem;
+}
+.solucoes .solucoes-text p {
+  margin: 20px 0;
+  color: #615e5e;
+  font-size: 1.2rem;
+}
+.solucoes .solucoes-text p b {
+  color: #000000;
+  font-size: 30px;
+}
+
+/* responsivo */
+@media (max-width: 960px) {
+  .menu-icon {
+    display: block;
+  }
+  .ul {
+    position: fixed;
+    background-color: var(--verde-escuro);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    transition: 0.3s;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ul li {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .ul.ativo {
+    left: 0;
+  }
+  main .container {
+    flex-direction: column;
+  }
+  main .container .main-img,
+  main .container .main-text {
+    width: 100%;
+    text-align: center;
+  }
+  main .container .main-text h1 {
+    font-size: 4rem;
+  }
+  main .container .main-text div {
+    justify-content: center;
+  }
+
+  .resultados .container {
+    flex-direction: column;
+  }
+
+  .resultados .resultados-text,
+  .resultados .resultados-numero {
+    width: 100%;
+    text-align: center;
+  }
+  .resultados-numero {
+    margin-top: 30px;
+  }
+  .diferenciais .container {
+    flex-direction: column;
+  }
+  .diferenciais .card {
+    width: 100%;
+  }
+  .solucoes .container {
+    flex-direction: column-reverse;
+  }
+  .solucoes .solucoes-text,
+  .solucoes .solucoes-img {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 374px) {
+  .resultados .resultados-numero {
+    flex-direction: column;
+  }
+
+  main .container .main-text h1 {
+    font-size: 2rem;
+  }
+}
