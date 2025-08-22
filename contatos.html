@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title> Contatos | Projeto IZAHUB</title>
+  </head>
+  <body>
+    <div class="background-verde">
+      <!-- header -->
+      <header>
+        <!-- container -->
+        <div class="container">
+          <nav>
+            <div class="logo">
+              <a href="index.html">Izahub</a>
+            </div>
+            <ul class="ul">
+              <li><a href="index.html">inicio</a></li>
+              <li><a href="sobre.html">sobre</a></li>
+              <li><a href="servicos.html">serviços</a></li>
+              <li><a href="contatos.html">contato</a></li>
+              <li>
+                <a href="#"><button class="btn-gradient">Orçamentos</button></a>
+              </li>
+            </ul>
+            <div class="menu-icon">
+              <img src="img/menu.png" alt="ícone de menu" />
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header -->
+       <!-- section contatos -->
+    <section class="contatos">
+      <div class="container">
+        <div class="contatos-texto">
+          <h2>Entre em Contato</h2>
+          <p>Tem alguma dúvida ou deseja um orçamento? Fale com a nossa equipe, estamos prontos para ajudar seu negócio a crescer.</p>
+        </div>
+        <!--  mapa -->
+          <div class="mapa">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7933502076803!2d-48.15248832635282!3d-1.2987512356371118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a45178723a0a69%3A0x952f8820a4013fa8!2sIzatech%20Solu%C3%A7%C3%B5es%20em%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1755648423806!5m2!1spt-BR!2sbr" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="contato-info">
+            <div class="left-side">
+              <div><i class="fa fa-map-marker"></i>
+              <p>Av. dos Ipês, QD13, LT15, Altos, Vale da Porangaba - Triângulo, Santa Izabel do Pará - PA, 68790-000</p>
+            </div>
+
+            <div><i class="fa fa-envelope"></i>
+              <p>contato@izatech.com.br</p>
+            </div>
+
+            <div><i class="fa fa-phone"></i>
+              <p>(91) 99327-3001</p>
+            </div>
+
+            </div>
+            <div class="right-side">
+              <form id="contatoForm" action="">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>       
+                <input type="text" id="assunto" placeholder="Assunto" required> 
+                <textarea id="mensagem" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+                <button  type="submit" class="btn">Enviar Mensagem</button>      
+              </form>
+            </div>
+          </div>
+          <!-- end mapa -->
+     
+    <!-- end section contatos -->
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

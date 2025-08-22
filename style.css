@@ -9,6 +9,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--off-white);
 }
 :root {
   --grafite: #2e2e2e;
@@ -161,7 +162,7 @@ main .container {
 }
 
 .diferenciais .card:hover {
-  background-color: #edff00;
+  background-color: var(--verde-claro);
   /* box-shadow: 0px 10px 67px 8px #edff00; */
 }
 .diferenciais .card img {
@@ -201,6 +202,352 @@ main .container {
 .solucoes .solucoes-text p b {
   color: #000000;
   font-size: 30px;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+
+.sobre .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.sobre-text {
+  flex: 1;
+}
+
+.sobre-text h1 {
+  font-size: 3rem;
+  color: var(--verde-claro);
+  margin-bottom: 20px;
+}
+
+.sobre-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.sobre-img {
+  flex: 1;
+  text-align: center;
+}
+
+.sobre-img img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+  height: 500px;
+  width: 500px;
+}
+
+/* ===== MISSÃO VISÃO VALORES ===== */
+.mvv {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.mvv .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.mvv .card {
+  flex: 1;
+  background: var(--off-white);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.mvv .card:hover {
+  background: var(--verde-claro);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.mvv .card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.mvv .card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: var(--grafite);
+}
+
+.mvv .card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Ajuste de cor ao hover */
+.mvv .card:hover h3,
+.mvv .card:hover p {
+  color: #fff;
+}
+
+/*  serviços */
+/* ===== SERVIÇOS ===== */
+.servicos {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+
+.servicos .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.servicos .titulo-principal {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--grafite);
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* ==== BLOCO DE CADA ÁREA (TI / Software) ==== */
+.bloco-servico {
+  margin-bottom: 80px;
+}
+
+.titulo-tema {
+  font-size: 2rem;
+  color: var(--verde-claro);
+  margin-bottom: 30px;
+  border-left: 6px solid var(--verde-claro);
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+/* ==== CARDS (TI) ==== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.cards .card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cards .card:hover {
+  background: var(--verde-claro);
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.cards .card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--grafite);
+  transition: 0.3s;
+}
+
+.cards .card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  transition: 0.3s;
+}
+
+.cards .card:hover h3,
+.cards .card:hover p {
+  color: #fff;
+}
+
+/* ==== LISTAS (Software) ==== */
+.conteudo-lista {
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease-in-out;
+}
+
+.conteudo-lista:hover {
+  background: var(--verde-claro);
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.conteudo-lista h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--grafite);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #555;
+  transition: 0.3s;
+}
+
+.conteudo-lista:hover h3,
+.conteudo-lista:hover li {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== CONTATOS ===== */
+.contatos {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.contatos-texto {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contatos-texto h2 {
+  font-size: 2.5rem;
+  color: var(--verde-claro);
+  margin-bottom: 15px;
+}
+
+.contatos-texto p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contato-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.contato-info .left-side {
+  width: 50%;
+  padding: 30px;
+  background-color: #34b797;
+  border-radius: 14px;
+  margin-right: 50px;
+  height: fit-content;
+}
+
+.contato-info .left-side div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contato-info .left-side div i {
+  font-size: 24px;
+  margin-right: 20px;
+  color: #fff;
+}
+.contato-info .left-side p {
+  font-size: 17px;
+  color: #fff;
+}
+
+.contato-info .right-side {
+  width: 50%;
+}
+.contato-info .right-side input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 47px;
+  padding: 15px;
+  border-radius: 9px;
+  transition: 0.3s;
+  border: 1px solid #f1f1f1;
+  color: #212121;
+  font-weight: lighter;
+}
+
+.contato-info .right-side input:focus,
+.contato-info .right-side textarea:focus {
+  border-color: 2px solid #34b797;
+  outline: none;
+  box-shadow: 0 0 6px #34b797;
+}
+
+.contato-info .right-side textarea {
+  border: 1px solid #f1f1f1;
+  color: #212121;
+  border-radius: 9px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  padding: 15px;
+  width: 100%;
+  transition: 0.3s;
+  resize: none;
+}
+.contato-info .right-side .btn {
+  display: inline-block;
+  width: 30%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #34b797;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  .servicos {
+    padding: 60px 20px;
+  }
+
+  .servicos .titulo-principal {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .titulo-tema {
+    font-size: 1.6rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .conteudo-lista {
+    padding: 20px;
+  }
+
+  .conteudo-lista h3 {
+    font-size: 1.2rem;
+  }
 }
 
 /* responsivo */
@@ -275,5 +622,45 @@ main .container {
 
   main .container .main-text h1 {
     font-size: 2rem;
+  }
+}
+
+/*  reponsividade sobre */
+@media (max-width: 960px) {
+  .sobre .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-text h1 {
+    font-size: 2rem;
+  }
+
+  .mvv .container {
+    flex-direction: column;
+  }
+
+  .mvv .card {
+    width: 100%;
+  }
+  /* responsividade serviços*/
+
+  /* responsivo  contatos*/
+}
+
+@media (max-width: 900px) {
+  .contato-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-info .left-side,
+  .contato-info .right-side {
+    width: 100%;
+    margin: 0 0 20px 0; /* espaçamento entre os blocos */
+  }
+
+  .contato-info .right-side .btn {
+    width: 100%; /* botão ocupa a largura toda em telas pequenas */
   }
 }
