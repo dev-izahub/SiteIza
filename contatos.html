@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title> Contatos | Projeto IZAHUB</title>
   </head>
@@ -23,7 +23,7 @@
               <li><a href="servicos.html">serviços</a></li>
               <li><a href="contatos.html">contato</a></li>
               <li>
-                <a href="#"><button class="btn-gradient">Orçamentos</button></a>
+<a href="https://wa.me/5591999135659"><button class="btn-gradient">Orçamentos</button></a>
               </li>
             </ul>
             <div class="menu-icon">
@@ -61,19 +61,78 @@
 
             </div>
             <div class="right-side">
-              <form id="contatoForm" action="">
-                <input type="text" id="nome" placeholder="Nome" required>
-                <input type="email" id="email" placeholder="E-mail" required>       
-                <input type="text" id="assunto" placeholder="Assunto" required> 
-                <textarea id="mensagem" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
-                <button  type="submit" class="btn">Enviar Mensagem</button>      
+              <form id="contatoForm" action="https://formspree.io/f/mpwjaaeb" method="POST">
+                <input type="text" id="nome" name="name" placeholder="Nome" required>
+                <input type="email" id="email" name="email" placeholder="E-mail" required>       
+                <input type="text" id="assunto" name="subject" placeholder="Assunto" required> 
+                <textarea id="mensagem" name="message" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+                <button type="submit" class="btn">Enviar Mensagem</button>      
               </form>
             </div>
           </div>
           <!-- end mapa -->
-     
+      </div>
+    </section>
     <!-- end section contatos -->
     
+    <footer>
+      <div class="footer-container">
+        <!-- Seção Izahub -->
+        <ul>
+          <li>
+            <h3>Izahub</h3>
+          </li>
+          <li>
+            <p>Inovando com propósito, conectando o futuro.</p>
+          </li>
+          <li>
+            <div class="social-media">
+              <a href="#"
+                ><img src="img/facebook.png" alt="Facebook da Izahub"
+              /></a>
+              <a href="#"
+                ><img src="img/twitter.png" alt="Twitter da Izahub"
+              /></a>
+              <a href="#"
+                ><img src="img/instagram.png" alt="Instagram da Izahub"
+              /></a>
+              <a href="#"
+                ><img src="img/youtube.png" alt="YouTube da Izahub"
+              /></a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Links principais -->
+        <ul>
+          <li><h3>Links</h3></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Preços</a></li>
+          <li><a href="#">Baixar</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Serviços</a></li>
+        </ul>
+
+        <!-- Suporte -->
+        <ul>
+          <li><h3>Suporte</h3></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Características</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">Comunicados</a></li>
+        </ul>
+
+        <!-- Contato -->
+        <ul>
+          <li><h3>Contato</h3></li>
+          <li><p>+55 (91) 9 8484-8484</p></li>
+          <li><p>emailizahub@gmail.com</p></li>
+          <li><p>Brasil</p></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- end footer -->
     <script src="js/main.js"></script>
   </body>
 </html>

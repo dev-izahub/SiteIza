@@ -27,6 +27,9 @@ body {
 }
 
 /* classes reutilizaveis */
+.contato-info .right-side {
+  display: block; /* Garantir que o formulário seja exibido */
+}
 .container {
   max-width: 1440px;
   padding: 0 5%;
@@ -207,7 +210,7 @@ main .container {
 /* ===== SOBRE ===== */
 .sobre {
   padding: 80px 0;
-  background: var(--off-white);
+  background: #f3f1f1;
 }
 
 .sobre .container {
@@ -223,7 +226,7 @@ main .container {
 }
 
 .sobre-text h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--verde-claro);
   margin-bottom: 20px;
 }
@@ -300,11 +303,10 @@ main .container {
   color: #fff;
 }
 
-/*  serviços */
 /* ===== SERVIÇOS ===== */
 .servicos {
   padding: 80px 0;
-  background: var(--off-white);
+  background: #f3f1f1;
 }
 
 .servicos .container {
@@ -315,7 +317,7 @@ main .container {
 
 .servicos .titulo-principal {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--grafite);
   margin-bottom: 60px;
   font-weight: 700;
@@ -334,15 +336,74 @@ main .container {
   padding-left: 12px;
   font-weight: 600;
 }
-
-/* ==== CARDS (TI) ==== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+/*  Banner TI */
+/* Banner Problemas de TI */
+.banner-ti {
+  background: url("img/banner-circuito.jpg") center/cover no-repeat;
+  padding: 100px 20px;
+  color: #fff;
+  text-align: left;
+  position: relative;
 }
 
-.cards .card {
+.banner-ti::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65); /* overlay escuro */
+}
+
+.banner-ti .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.banner-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #ffb300;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.banner-text ul {
+  margin-bottom: 30px;
+  list-style: "✔ " inside; /* coloca check em vez de bolinha */
+  line-height: 2;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.btn-solucao {
+  background: #2a9379;
+  color: #fff;
+  padding: 16px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+  display: inline-block;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-solucao:hover {
+  background: #2a9379;
+}
+
+/* ==== CARDS (TI) e (SOFT) ==== */
+/* ==== CARDS PADRONIZADOS (TI + Software) ==== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* sempre 3 colunas */
+  gap: 25px;
+  max-width: 1200px; /* centraliza melhor em telas grandes */
+  margin: 0 auto;
+}
+
+.card {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
@@ -351,78 +412,202 @@ main .container {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.cards .card:hover {
+.card:hover {
   background: var(--verde-claro);
   color: #fff;
   transform: translateY(-6px);
 }
 
-.cards .card h3 {
+.card h3 {
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--grafite);
   transition: 0.3s;
 }
 
-.cards .card p {
+.card p,
+.card li {
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
   transition: 0.3s;
 }
 
-.cards .card:hover h3,
-.cards .card:hover p {
-  color: #fff;
-}
-
-/* ==== LISTAS (Software) ==== */
-.conteudo-lista {
-  margin-bottom: 40px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease-in-out;
-}
-
-.conteudo-lista:hover {
-  background: var(--verde-claro);
-  color: #fff;
-  transform: translateY(-6px);
-}
-
-.conteudo-lista h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: var(--grafite);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.lista {
-  list-style: none;
+.card ul {
+  list-style: "✔ " inside;
   padding: 0;
   margin: 0;
 }
 
-.lista li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-  color: #555;
-  transition: 0.3s;
+.card:hover h3,
+.card:hover p,
+.card:hover li {
+  color: #fff;
 }
 
-.conteudo-lista:hover h3,
-.conteudo-lista:hover li {
+/* Banner Software de Gestão */
+.banner-principal {
+  background: url("img/banner-software.avif") center/cover no-repeat;
+  position: relative;
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.4);
+  text-align: left; /* alinhado à esquerda igual ao outro */
+  padding: 100px 20px;
+}
+
+/* Sobreposição mais forte */
+.banner-principal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* overlay mais escuro */
+}
+
+.conteudo-banner {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 1;
+  padding: 40px;
+}
+
+/* Título principal */
+.banner-principal h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #ffb100;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Subtítulo */
+.banner-principal h2 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Lista */
+.banner-principal ul {
+  list-style: "✔ " inside;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Botão */
+.btn {
+  background: #2a9379; /* verde padrão TI */
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #2a9379;
+}
+
+/*  CARDS SOFTWARE */
+/* ===== SOFTWARE DE GESTÃO ===== */
+.bloco-servico {
+  padding: 80px 0;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.titulo-tema {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Container dos cards */
+.cards-gestao {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Cada card */
+.card-gestao {
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 35px 25px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover */
+.card-gestao:hover {
+  background: #20b486; /* cor destaque */
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Título do card */
+.card-gestao h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* Listas organizadas */
+.card-gestao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* alinha itens melhor */
+}
+
+.card-gestao li {
+  margin-bottom: 14px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 28px; /* espaço para o ícone */
+}
+
+/* Check antes de cada item */
+.card-gestao li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #20b486;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Quando hover no card → check muda de cor para branco */
+.card-gestao:hover li::before {
+  color: #fff;
+}
+
+/* Negrito dentro da lista */
+.card-gestao li strong {
+  font-weight: 600;
 }
 
 /* ===== CONTATOS ===== */
 .contatos {
-  background: #fff;
+  background: #f3f1f1;
   padding: 80px 0;
 }
 
@@ -521,6 +706,31 @@ main .container {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contato-info .right-side .btn:hover {
+  background: #2a9379;
+  transform: translateY(-2px);
+}
+
+.contato-info .right-side .btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Estilos para validação */
+.contato-info .right-side input.valid,
+.contato-info .right-side textarea.valid {
+  border-color: #34b797;
+  box-shadow: 0 0 5px rgba(52, 183, 151, 0.3);
+}
+
+.contato-info .right-side input.invalid,
+.contato-info .right-side textarea.invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
 }
 /* ==== RESPONSIVO ==== */
 @media (max-width: 768px) {
@@ -550,13 +760,13 @@ main .container {
   }
 }
 
-.melhores-serviços .azul{
+.melhores-serviços .azul {
   font-size: 24px;
-   font-size: 30px;
+  font-size: 30px;
   font-weight: 600;
   color: #0060f0;
 }
-.melhores-serviços h2{
+.melhores-serviços h2 {
   font-size: 2.5rem;
 }
 .melhores-serviços .cards {
@@ -629,25 +839,25 @@ main .container {
   background-color: #0b8d5e;
 }
 /* seção newsletter */
-.newsletter{
+.newsletter {
   background-color: var(--verde-claro);
 }
-.newsletter .box-newsletter{
+.newsletter .box-newsletter {
   text-align: center;
   padding: 100px;
-  background-image: url('./img/background-newsletter.png');
+  background-image: url("./img/background-newsletter.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
 }
-.newsletter .box-newsletter h2{
+.newsletter .box-newsletter h2 {
   font-size: 2.5rem;
 }
-.newsletter .box-newsletter p{
+.newsletter .box-newsletter p {
   margin: 13px 0;
 }
-.newsletter .box-newsletter input{
+.newsletter .box-newsletter input {
   width: 35%;
   padding: 15px;
   border-radius: 15px;
@@ -656,7 +866,7 @@ main .container {
   color: #00000098;
   background-color: #faefda;
 }
-.newsletter .box-newsletter button{
+.newsletter .box-newsletter button {
   font-size: 15px;
   border: none;
   outline: none;
@@ -677,8 +887,9 @@ main .container {
 footer {
   background-color: #1a1a1a;
   color: #ffffff;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
+  padding: 0; /* Remover padding lateral */
+  width: 100%; /* Garantir que o fundo ocupe 100% da largura */
+  font-family: "Arial", sans-serif;
 }
 
 .footer-container {
@@ -687,6 +898,7 @@ footer {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 20px; /* Adicionar padding interno para espaçar o conteúdo */
 }
 
 .footer-container ul {
@@ -819,54 +1031,54 @@ footer {
     max-width: calc(50% - 30px);
     margin-top: 30px;
   }
-  .newsletter .box-newsletter{
+  .newsletter .box-newsletter {
     padding: 50px;
   }
-  .newsletter .box-newsletter h2{
+  .newsletter .box-newsletter h2 {
     font-size: 2rem;
   }
-  .newsletter .box-newsletter input{
+  .newsletter .box-newsletter input {
     width: 90%;
   }
-  .newsletter .box-newsletter button{
+  .newsletter .box-newsletter button {
     width: 50%;
     margin-top: 20px;
   }
   /* Responsivo */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-container ul {
+      max-width: 100%;
+    }
+
+    .social-media {
+      justify-content: flex-start;
+    }
   }
 
-  .footer-container ul {
-    max-width: 100%;
-  }
+  @media (max-width: 480px) {
+    footer {
+      padding: 30px 15px;
+    }
 
-  .social-media {
-    justify-content: flex-start;
-  }
-}
+    .footer-container h3 {
+      font-size: 18px;
+    }
 
-@media (max-width: 480px) {
-  footer {
-    padding: 30px 15px;
-  }
+    .footer-container p,
+    .footer-container a {
+      font-size: 13px;
+    }
 
-  .footer-container h3 {
-    font-size: 18px;
+    .social-media a img {
+      width: 20px;
+      height: 20px;
+    }
   }
-
-  .footer-container p,
-  .footer-container a {
-    font-size: 13px;
-  }
-
-  .social-media a img {
-    width: 20px;
-    height: 20px;
-  }
-}
 }
 @media (max-width: 600px) {
   .melhores-serviços .cards .card-item {
@@ -877,7 +1089,7 @@ footer {
   .melhores-serviços .cards {
     justify-content: center;
   }
-} 
+}
 @media (max-width: 374px) {
   .resultados .resultados-numero {
     flex-direction: column;
@@ -889,7 +1101,8 @@ footer {
 }
 
 /*  reponsividade sobre */
-@media (max-width: 960px) {
+
+/* @media (max-width: 960px) {
   .sobre .container {
     flex-direction: column;
     text-align: center;
@@ -905,11 +1118,115 @@ footer {
 
   .mvv .card {
     width: 100%;
-  }
-  /* responsividade serviços*/
+  } */
 
-  /* responsivo  contatos*/
+/* responsividade serviços*/
+/* ====== RESPONSIVIDADE ====== */
+
+/* Tablets médios (até 1024px) */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+
+  .banner-text h2,
+  .banner-principal h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner-principal h2 {
+    font-size: 1.2rem;
+  }
+
+  .banner-text ul,
+  .banner-principal ul {
+    font-size: 1.1rem;
+  }
 }
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+
+  .servicos {
+    padding: 50px 0;
+  }
+
+  .servicos .titulo-principal {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .titulo-tema {
+    font-size: 1.5rem;
+  }
+
+  .banner-ti,
+  .banner-principal {
+    padding: 70px 15px;
+    text-align: center; /* centraliza no mobile */
+  }
+
+  .banner-ti .container,
+  .conteudo-banner {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .banner-text h2,
+  .banner-principal h1 {
+    font-size: 2rem;
+  }
+
+  .banner-principal h2 {
+    font-size: 1.1rem;
+  }
+
+  .banner-text ul,
+  .banner-principal ul {
+    font-size: 1rem;
+    text-align: left; /* mantém lista legível */
+  }
+
+  .btn,
+  .btn-solucao {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+  .banner-text h2,
+  .banner-principal h1 {
+    font-size: 1.6rem;
+  }
+
+  .banner-principal h2 {
+    font-size: 1rem;
+  }
+
+  .banner-text ul,
+  .banner-principal ul {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card li {
+    font-size: 0.95rem;
+  }
+}
+
+/* responsivo  contatos*/
 
 @media (max-width: 900px) {
   .contato-info {
@@ -925,5 +1242,24 @@ footer {
 
   .contato-info .right-side .btn {
     width: 100%; /* botão ocupa a largura toda em telas pequenas */
+  }
+}
+
+/* RESPONSIVIDADE PARA A SEÇÃO DE CONTATOS */
+@media (max-width: 768px) {
+  .contato-info {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .contato-info .left-side,
+  .contato-info .right-side {
+    width: 100%;
+    margin-right: 0;
+    padding: 20px;
+  }
+
+  .contato-info .right-side .btn {
+    width: 100%;
   }
 }

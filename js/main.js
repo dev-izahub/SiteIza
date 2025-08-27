@@ -1,3 +1,4 @@
+console.log("JavaScript carregado"); // Adicionando log para verificar se o script está sendo executado
 var menuIcon = document.querySelector(".menu-icon");
 var ul = document.querySelector(".ul");
 
@@ -15,22 +16,64 @@ menuIcon.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contatoForm");
+  const submitButton = form.querySelector('button[type="submit"]');
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const assunto = document.getElementById("assunto").value;
-    const mensagem = document.getElementById("mensagem").value;
+    // Mostrar loading no botão
+    const originalText = submitButton.textContent;
+    submitButton.textContent = "Enviando...";
+    submitButton.disabled = true;
 
-    console.log("Nome:", nome);
-    console.log("E-mail:", email);
-    console.log("Assunto:", assunto);
-    console.log("Mensagem:", mensagem);
+    try {
+      // Coletar dados do formulário
+      const formData = new FormData(form);
 
-    alert("Formulário capturado com sucesso!");
+      console.log("Formulário enviado"); // Adicionando log para verificar o envio
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    form.reset();
+      if (response.ok) {
+        // Sucesso
+        alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+        form.reset();
+      } else {
+        // Erro
+        const data = await response.json();
+        if (data.errors) {
+          alert(
+            "Erro ao enviar mensagem: " +
+              data.errors.map((error) => error.message).join(", ")
+          );
+        } else {
+          alert("Erro ao enviar mensagem. Tente novamente.");
+        }
+      }
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Erro de conexão. Verifique sua internet e tente novamente.");
+    } finally {
+      // Restaurar botão
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
+    }
+  });
+
+  // Validação em tempo real
+  const inputs = form.querySelectorAll("input, textarea");
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      if (input.checkValidity()) {
+        input.style.borderColor = "#34b797";
+      } else {
+        input.style.borderColor = "#ff6b6b";
+      }
+    });
   });
 });
