@@ -328,6 +328,68 @@ main .container {
   color: #fff;
 }
 
+/* RESPONSIVO SEÇÃO SOBRE */
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas até 1024px (tablets e notebooks pequenos) */
+@media (max-width: 1024px) {
+  .sobre .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-text h1 {
+    font-size: 3rem;
+  }
+
+  .sobre-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .mvv .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mvv .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Telas até 768px (tablets em modo retrato e celulares grandes) */
+@media (max-width: 768px) {
+  .sobre-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .sobre-text p {
+    font-size: 1rem;
+  }
+
+  .mvv .card {
+    width: 100%;
+  }
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  .sobre-text h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-text p {
+    font-size: 0.95rem;
+  }
+
+  .sobre-img img {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+}
+/* END REPONSIVIDADE SEÇÃO SOBRE */
+
 /* ===== SERVIÇOS ===== */
 .servicos {
   padding: 80px 0;
