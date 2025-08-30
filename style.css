@@ -1044,7 +1044,108 @@ footer {
   color: #999;
 }
 /* end footer */
+
+/* RESPONSIVO HOME */
+/* ====== RESPONSIVIDADE ====== */
+
+/* Tablets e notebooks pequenos */
+@media (max-width: 1024px) {
+  main .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-text,
+  .main-img {
+    width: 100%;
+  }
+
+  .resultados .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resultados .resultados-text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .diferenciais .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .diferenciais .card {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .solucoes .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .solucoes .solucoes-text,
+  .solucoes .solucoes-img {
+    flex: 1 1 100%;
+  }
+
+  .solucoes .solucoes-text img {
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+
+/* Celulares médios e grandes */
+@media (max-width: 768px) {
+  .main-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .resultados .resultados-numero {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .diferenciais .card {
+    width: 100%;
+  }
+
+  .solucoes .solucoes-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .main-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .resultados .resultados-text {
+    font-size: 1.2rem;
+  }
+
+  .resultados .resultados-numero p span {
+    font-size: 24px;
+  }
+
+  .solucoes .solucoes-text p {
+    font-size: 1rem;
+  }
+
+  .solucoes .solucoes-text p b {
+    font-size: 1.3rem;
+  }
+}
+/* END RESPONSIVO HOME */
+
 /* responsivo */
+
 @media (max-width: 960px) {
   .menu-icon {
     display: block;
